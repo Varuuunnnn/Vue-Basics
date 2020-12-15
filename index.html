@@ -14,6 +14,7 @@
         {{ message }}<br>
         {{ name }}<br>
         {{ discount() }}<br>
+        {{ getMail() }}
     </div>
     <script>
      new Vue({
@@ -23,11 +24,15 @@
            message:'Hello Vue',
            name:'Varun',
            price:'1000',
+           email:'varun@yahoo.in',
          },
          methods:{
            discount:function(){
                cost=this.price-100;
                return cost;
+           },
+           getMail:function(){
+               return this.email;
            }
 
          }
