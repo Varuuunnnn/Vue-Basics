@@ -11,14 +11,27 @@
 
 <body>
     <div id="logic">
-        {{ header }}
+        {{ message }}<br>
+        {{ name }}<br>
+        {{ discount() }}<br>
     </div>
     <script>
      new Vue({
          el:'#logic',
+         
          data:{
-         header:'Hello Vue'
+           message:'Hello Vue',
+           name:'Varun',
+           price:'1000',
+         },
+         methods:{
+           discount:function(){
+               cost=this.price-100;
+               return cost;
+           }
+
          }
+
      });
 
     </script>
