@@ -12,19 +12,24 @@
 <body>
     <div id="logic">
         {{ message }}<br>
-        {{ name }}<br>
+        <h2>{{ item }}</h2><br>
         {{ discount() }}<br>
-        {{ getMail() }}
+        {{ getMail() }}<br>
+        <img v-bind:src="image" height="150" width="100"><br>
+        <button v-html:src="htmlCode">showBox</button>
     </div>
     <script>
      new Vue({
          el:'#logic',
          
          data:{
-           message:'Hello Vue',
-           name:'Varun',
+           message:'Hello User..!!',
+           item:'Elon Musk Book',
            price:'1000',
-           email:'varun@yahoo.in',
+           authorEmail:'varun@yahoo.in',
+           image:'https://images-na.ssl-images-amazon.com/images/I/51mwEg4Q7nL._SX344_BO1,204,203,200_.jpg',
+           htmlCode:'<input></input>',
+        
          },
          methods:{
            discount:function(){
@@ -32,7 +37,7 @@
                return cost;
            },
            getMail:function(){
-               return this.email;
+               return this.authorEmail;
            }
 
          }
