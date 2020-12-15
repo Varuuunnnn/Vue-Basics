@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-events demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+
+<body>
+    <div id="logic">
+        <h2>Set value</h2>
+        <h3>{{ val }}  </h3>
+        <button v-on:click="setOne" style="margin: 5px; border-radius: 12px;">set one</button>
+        <button v-on:click="setZero" style="margin: 5px;border-radius: 50%;">set zero</button>
+        <!--<button v-on:click.once="setZero" style="margin: 5px;border-radius: 50%;">reset</button>
+        here reset btn will work only one time-->
+        <br>
+        <input v-on:keyup="keyPressed" value="press any key">
+    </div>
+    <script>
+     new Vue({
+      el:'#logic',
+      data:{
+       val:0,
+      },
+      methods:{
+       setOne: function(){
+           this.val=1;
+       },
+       setZero: function(){
+           this.val=0;
+       },
+       keyPressed: function(){
+           console.log("key pressed");
+       }
+      },
+     })
+    </script>
+</body>
+
+</html>
