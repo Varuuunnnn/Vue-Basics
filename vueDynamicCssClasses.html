@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-dynamic-css-classes demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+    
+
+<body>
+    <div id="app">
+
+      <div v-bind:class="{status:status}">hi there</div>
+      <button v-on:click="{status=!status}">Click here</button>
+     
+    </div>
+
+    <script>
+     
+     new Vue({
+      el:'#app',
+      data:{
+       message:'',
+       status:true,
+      },
+      methods:{
+      
+      },
+     })
+
+    </script>
+</body>
+
+</html>
