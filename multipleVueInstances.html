@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-multiple-instances-demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+    
+
+<body>
+    <div id="app">
+      <h2>{{ val }} : {{ price }}</h2>
+      {{ showPrice() }} 
+      <!--it will not work as demo is undefined for it-->
+    </div>
+
+    <div id="demo">
+     <h2>{{ val }} : {{ price }}</h2>
+     {{ showPrice() }}
+    </div>
+
+    <script>
+
+     var app=new Vue({
+      el:'#app',
+      data:{
+       val:100,
+       price:2000,
+      },
+      methods:{
+          showPrice:function(){
+              return demo.price; //demo instance is undefined for app
+          },
+      },
+     });
+
+     var demo=new Vue({
+      el:'#demo',
+      data:{
+       val:200,
+       price:4000,
+      },
+      methods:{
+          showPrice:function(){
+              return app.price;
+          },
+      },
+      
+     }); 
+    
+     
+    </script>
+</body>
+
+</html>
