@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-looping demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+    
+
+<body>
+    <div id="app">
+      <h3>player names</h3><br> 
+      <p v-for="student in students">{{ student }}</p><br>
+      <h3>player scores</h3><br> 
+      <p v-for="player in players">{{ player.name }} : {{ player.score }}</p>
+    </div>
+
+    <script>
+     
+     new Vue({
+      el:'#app',
+      data:{
+       students:['abhishek','varun','shreyash','jim'],
+       players:[
+               {name:'abhishek',score:5},
+               {name:'varun',score:9},
+               {name:'shreyash',score:4},
+               {name:'jim',score:8},
+       ],
+      },
+      
+     })
+
+    </script>
+</body>
+
+</html>
