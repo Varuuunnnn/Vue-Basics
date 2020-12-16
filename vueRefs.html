@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-Refs-demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+</head>
+    
+<body>
+
+    <div id="app">
+        <h2>interest calculator <br><h4>Rate:5 Time:3 yrs</h4></h2>
+        <input type="text" ref="principal">
+        <button v-on:click="calInterest()">interest</button>
+        <p>{{ interest }}</p>
+    </div>
+
+    <script type="text/javascript" src="vueRefs.js"></script>
+</body>
+
+</html>
