@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-components-demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+</head>
+    
+<body>
+  
+
+    <div id="app">
+      
+        <div class="plans">
+            <h1>plans by components</h1>
+            <plan v-for="plan in plans" :name="plan"></plan>
+            
+            <!--<plan>Premium</plan>--> <!--this can be a way but we can use props here-->
+            
+            <h2>explicit plans</h2>
+            <plan name="Premium"></plan> 
+
+            <div class="plan">
+                <div class="description">
+                    <span class="title">
+                        The Single
+                    </span>
+                </div>
+            </div>
+        
+        
+        
+            <div class="plan">
+                <div class="description">
+                    <span class="title">
+                        The Couple
+                    </span>
+                </div>
+            </div>
+        
+
+        
+            <div class="plan">
+                <div class="description">
+                    <span class="title">
+                        The Family
+                    </span>
+                </div>
+            </div>
+        </div> 
+       <!---here we had to write more so we use component for plan and use it multiple times-->
+
+
+        
+    </div>
+    <!---way to use components-->
+
+    <script type="text/x-template" id="plan-template"> <!-- id of template-->
+        <div class="plan">
+            <div class="description">
+                <span class="title">
+                    {{ name }}
+                </span>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/javascript" src="componentDemo.js"></script>
+</body>
+
+</html>

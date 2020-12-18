@@ -9,10 +9,23 @@
 </head>
     
 <body>
+    <h3>temperature increase</h3>
 
     <div id="app">
-        <myComponent></myComponent>
+        <mycomponent></mycomponent>
+        <mycomponent></mycomponent>
+        
     </div>
+    <!---1st way to use components-->
+
+    <script type="text/x-template" id="mycomponentid"> <!-- id of template-->
+        <div>
+        <button v-on:click="temperature+=10">{{ temperature }}</button>
+        <p>{{ temperature }} </p>
+        </div>
+        <p>{{ temperature }}</p> <!---here we cannt use another element so it gives error(only one root element should be there so we need to put inside a single div)-->
+        
+    </script>
 
     <script type="text/javascript" src="vueComponents.js"></script>
 </body>
